@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-xs-12">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="col-xs-1">#</th>
+        <th class="col-xs-3">Name</th>
+        <th class="col-xs-4">Contact</th>
+        <th class="col-xs-3">Email</th>
+        <td class="col-xs-2"></td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let student of students; let i = index" (click)="showDetail($event, student)" [ngClass]="{'selected relative': selectedStudent?.id == student?.id }">
+        <td>{{i+1}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.contact}}</td>
+        <td>{{student.email}}</td>
+        <td class="text-center">
+          <a class="delete-option icon-home" (click)="showDetail($event, student)">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+          </a>
+          <a class="edit-option icon-home" [routerLink]="['/students', student.id]">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          </a>
+          <a class="delete-option icon-home" (click)="deleteDetail($event, student.id)">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </a>
+          <span class="arrow-right"></span>
+        </td>
+      </tr>
+      <tr class="text-center"><td colspan="4" *ngIf="!students.length">No Students record yet, please <a [routerLink]="['/students', 0]">create one</a>.</td></tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

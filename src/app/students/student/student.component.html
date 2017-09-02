@@ -1,0 +1,40 @@
+<div class="heading row">
+  <div class="col-xs-12 col-sm-10">Student - {{student.id || 'New'}}</div>
+</div>
+<form id="student_form" (ngSubmit)="complexForm.valid && onSubmit(student.id)" *ngIf="student">
+  <h1>Sign Up</h1>
+  <fieldset>
+    <legend><span class="number">1</span>Your basic info</legend>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="user_name" [(ngModel)]="student.name" [ngClass]="{'has-error':!complexForm.controls['name'].valid && complexForm.controls['name'].touched}" [formControl]="complexForm.controls['name']">
+    <div class="error" *ngIf="(complexForm.controls['name'].hasError('required') || complexForm.controls['name'].hasError('minlength')) && complexForm.controls['name'].touched">You must include a name with min 5 character.</div>
+
+    <label for="mail">Email:</label>
+    <input type="email" id="mail" name="user_email" [(ngModel)]="student.email" #userEmail="ngModel">
+
+    <label for="contact">Contact:</label>
+    <input type="text" id="contact" name="user_password" [(ngModel)]="student.contact">
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="number">2</span>Your School profile</legend>
+
+    <label for="school_name">School Name:</label>
+    <input type="text" id="school_name" name="school_name" [(ngModel)]="student.schoolName">
+
+    <label for="class_name">Class:</label>
+    <select id="class_name" name="class_name" [(ngModel)]="student.className">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4"> 4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+
+    <label for="bio">Biography:</label>
+    <textarea id="bio" name="user_bio" [(ngModel)]="student.biography"></textarea>
+
+  </fieldset>
+  <button type="submit" [disabled]="!complexForm.valid">Add Student</button>
+</form>

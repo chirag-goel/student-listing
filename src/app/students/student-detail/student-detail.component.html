@@ -1,0 +1,29 @@
+<div class="col-xs-12">
+  <legend><span class="number">1</span>Your basic info</legend>
+  <span class="close-button" (click)="closeDetail()"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+  <div class="row student-detail">
+    <div class="col-xs-4 title">Name</div>
+    <div class="col-xs-8 content">{{selectedStudent.name || '-'}}</div>
+  </div>
+  <div class="row student-detail">
+    <div class="col-xs-4 title">Email</div>
+    <div class="col-xs-8 content">{{selectedStudent.email || '-'}}</div>
+  </div>
+  <div class="row student-detail">
+    <div class="col-xs-4 title">Contact</div>
+    <div class="col-xs-8 content">{{selectedStudent.contact || '-'}}</div>
+  </div>
+  <legend><span class="number">2</span>Your School profile</legend>
+  <div class="row student-detail">
+    <div class="col-xs-4 title">School Name</div>
+    <div class="col-xs-8 content">{{selectedStudent.schoolName || '-'}}</div>
+  </div>
+  <div class="row student-detail">
+    <div class="col-xs-4 title">Class</div>
+    <div class="col-xs-8 content">{{selectedStudent.className || '-'}}</div>
+  </div>
+  <div class="row student-detail">
+    <div class="col-xs-4 title">Biography</div>
+    <div class="col-xs-8 content">{{selectedStudent.biography || '-'}}</div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+form#student_form {
+  max-width: 480px;
+  margin: 30px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+  .error{
+    color: red;
+    margin:-20px 0 15px 0;
+  }
+  .has-error{
+    border: 1px solid red;
+  }
+}

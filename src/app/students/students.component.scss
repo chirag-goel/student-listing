@@ -1,0 +1,83 @@
+/deep/ .heading button{
+  width: 120px;
+}
+
+/deep/ .student-list{
+  padding: 0 50px;
+  .table{
+    cursor: pointer;
+  }
+  .edit-option, .delete-option{
+    display: none;
+  }
+  tr td{
+    height: 40px;
+  }
+  thead tr{
+    background: rgba(255,255,255,0.1) !important;
+    background-color: #e8eeef;
+  }
+  tr .edit-option, tr .delete-option{
+    margin-left: 15px;
+    background-color: #5FCF85;
+    width: 22px;
+    height: 22px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 25px;
+  }
+  tr:hover .edit-option, tr:hover .delete-option{
+    display: inline-block;
+  }
+
+  tr:nth-of-type(odd){
+    background: #f4f7f8;
+  }
+
+  .arrow-right {
+    display: none;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right:10px solid rgba(112, 214, 142, 0.21);
+    position: absolute;
+    right: 5px;
+  }
+
+  .selected .arrow-right{
+    display: inline;
+  }
+
+  tr.selected .edit-option, tr.selected .delete-option{
+    display: inline-block !important;
+  }
+}
+
+/deep/ .student-details {
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+  min-height: 100px;
+  margin-left: -40px;
+  border: 2px solid rgba(112, 214, 142, 0.21);
+  position: relative;
+  .close-button{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+  }
+  legend{
+    margin: 20px 0 10px 0;
+  }
+  .student-detail{
+    margin-top: 10px;
+    .title{
+      font-weight: bold;
+    }
+    .content{
+      font-size: 13px;
+    }
+  }
+}
